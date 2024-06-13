@@ -89,10 +89,11 @@
                                 <field name="manufacturer_id" />
                             </group>
                         </group>
+                        <group>
                         <group name="specs" string="Specifications">
                             <field
                             name="spec_line_ids"
-                            nolabel="1"
+                            nolabel="1" colspan="2"
                             widget="one2many"
                             context="{'default_component_type_id': component_type_id}"
                         >
@@ -133,6 +134,7 @@
                                     </sheet>
                                 </form>
                             </field>
+                        </group>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
@@ -180,7 +182,7 @@
                                 <field name="name" />
                             </group>
                             <group string="Valid Keys">
-                                <field name="key_ids" nolabel="1" editable="bottom">
+                                <field name="key_ids" nolabel="1" colspan="2" editable="bottom">
                                     <tree>
                                         <field name="name" />
                                         <field name="value_type_id" />
@@ -279,14 +281,14 @@
                         </group>
                         <group>
                             <group string="Valid Keys">
-                                <field name="key_ids" nolabel="1" editable="bottom">
+                                <field name="key_ids" nolabel="1" colspan="2" editable="bottom">
                                     <tree>
                                         <field name="name" />
                                     </tree>
                                 </field>
                             </group>
                             <group string="Valid Values">
-                                <field name="value_ids" nolabel="1" editable="bottom">
+                                <field name="value_ids" nolabel="1" colspan="2" editable="bottom">
                                     <tree>
                                         <field name="name" />
                                     </tree>
@@ -340,7 +342,7 @@
                             <group string="Component Types">
                                 <field
                                 name="component_type_ids"
-                                nolabel="1"
+                                nolabel="1" colspan="2"
                                 editable="bottom"
                             >
                                     <tree>

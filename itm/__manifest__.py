@@ -9,7 +9,8 @@
     "category": "IT Infrastructure Management",
     "summary": """IT Assets, Credentials, Backups, Applications.""",
     "author": """TREVI Software,
-        Leandro Ezequiel Baldi""",
+        Leandro Ezequiel Baldi,
+        Yuriy Gural""",
     "website": "https://github.com/trevi-software/trevi-misc",
     "images": [
         "static/src/img/main_screenshot.png",
