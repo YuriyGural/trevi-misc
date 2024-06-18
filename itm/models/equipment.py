@@ -119,6 +119,11 @@ class ItEquipment(models.Model):
         help="A site or place of which this device is deployed",
     )
 
+    # TODO: remove after migration to 16.0.2.0.3
+    brand = fields.Many2one(
+        "itm.equipment.brand", "Brand Name", help="The assets or device brand"
+    )
+
     active = fields.Boolean(default=True, tracking=True)
     # Counts
     access_count = fields.Integer(
@@ -144,7 +149,11 @@ class ItEquipment(models.Model):
     code = fields.Char(
         tracking=True, index=True, help="Organization specific inventory code"
     )
-    brand_id = fields.Many2one("itm.equipment.brand", "Brand", help="The assets or device brand")
+    brand_id = fields.Many2one(
+        "itm.equipment.brand",
+        "Brand",
+        help="The assets or device brand",
+    )
     model = fields.Char()
     partner_id = fields.Many2one(
         "res.partner",
@@ -451,7 +460,7 @@ class ItEquipment(models.Model):
 
         return super(ItEquipment, self).unlink()
 
-    @api.returns('self', lambda value: value.id)
+    @api.returns("self", lambda value: value.id)
     def copy(self, default=None):
         self.ensure_one()
         default = dict(default or {}, name=_("%s (copy)") % (self.name))

@@ -70,14 +70,18 @@
                 <field name="partner_id" optional="hide" />
                 <field name="asset_type_id" optional="show" />
                 <field name="brand_id" optional="show" />
-                <field name="company_id" groups="base.group_multi_company"/>
-                <field name="state"
-                       decoration-info="state == 'in_store'"
-                       decoration-success="state == 'in_use'"
-                       decoration-warning="state == 'loaned'"
-                       decoration-danger="state == 'in_repair'"
-                       decoration-muted="state == 'retired'"
-                       widget="badge" optional="show" class="text-dark" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field
+                    name="state"
+                    decoration-info="state == 'in_store'"
+                    decoration-success="state == 'in_use'"
+                    decoration-warning="state == 'loaned'"
+                    decoration-danger="state == 'in_repair'"
+                    decoration-muted="state == 'retired'"
+                    widget="badge"
+                    optional="show"
+                    class="text-dark"
+                />
             </tree>
         </field>
     </record>
@@ -96,7 +100,7 @@
                     />
                 </header>
                 <sheet>
-                    <field name="company_id" invisible="1"/>
+                    <field name="company_id" invisible="1" />
                     <div class="oe_button_box" name="buttons">
                         <button
                             name="%(act_equipment_2_access)d"
@@ -251,7 +255,10 @@
                                 </group>
                                 <group>
                                     <field name="product_buydate" />
-                                    <field name="product_cost" groups="itm.group_itm_manager" />
+                                    <field
+                                        name="product_cost"
+                                        groups="itm.group_itm_manager"
+                                    />
                                     <field name="product_warranty" />
                                 </group>
                             </group>
@@ -284,10 +291,14 @@
                         >
                             <div>
                                 <group>
-                                    <field name="router_dmz"/>
+                                    <field name="router_dmz" />
                                 </group>
                                 <group string="Forward Rules">
-                                    <field name="router_forward_ids" nolabel="1" colspan="2">
+                                    <field
+                                        name="router_forward_ids"
+                                        nolabel="1"
+                                        colspan="2"
+                                    >
                                         <tree editable="bottom">
                                             <field name="name" />
                                             <field name="source_port" />
@@ -299,7 +310,11 @@
                                     </field>
                                 </group>
                                 <group string="Firewall Rules">
-                                    <field name="router_rules_ids" nolabel="1" colspan="2">
+                                    <field
+                                        name="router_rules_ids"
+                                        nolabel="1"
+                                        colspan="2"
+                                    >
                                         <tree editable="bottom">
                                             <field name="name" />
                                             <field name="source_port" />
@@ -314,7 +329,11 @@
                         </page>
                         <page string="Network Configuration">
                             <group>
-                                <field name="equipment_network_ids" nolabel="1" colspan="2">
+                                <field
+                                    name="equipment_network_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                >
                                     <tree editable="bottom">
                                         <field name="name" />
                                         <field name="mac" />
@@ -341,7 +360,11 @@
                             attrs="{'invisible':[('function_fileserver','=', False )]}"
                         >
                             <group>
-                                <field name="equipment_mapping_ids" nolabel="1" colspan="2">
+                                <field
+                                    name="equipment_mapping_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                >
                                     <tree>
                                         <field name="name" />
                                         <field name="path" />
@@ -636,33 +659,45 @@
                             <div class="oe_kanban_content" tooltip="kanban-tooltip">
                                 <div class="o_kanban_record_top">
                                     <div class="o_kanban_record_headings mt4 ms-1">
-                                        <strong class="o_kanban_record_title"><field name="name"/><span t-if="record.code.raw_value"><small> (<field name="code"/>)</small></span></strong>
+                                        <strong class="o_kanban_record_title"><field name="name" /><span t-if="record.code.raw_value"><small> (<field name="code" />)</small></span></strong>
                                     </div>
-                                    <span class="float-end text-end"><t t-esc="record.asset_type_id.value"/></span>
+                                    <span class="float-end text-end"><t t-esc="record.asset_type_id.value" /></span>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <div><field name="brand_id"/></div>
-                                        <div><field name="model"/></div>
+                                        <div><field name="brand_id" /></div>
+                                        <div><field name="model" /></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <span><field name="location"/></span>
+                                        <span><field name="location" /></span>
                                     </div>
                                     <div class="col-6">
                                         <span class="float-end">
-                                            <field name="ip4_ids" widget="many2many_tags"/>
+                                            <field name="ip4_ids" widget="many2many_tags" />
                                         </span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-10">
-                                        <span><field name="owner"/></span>
+                                        <span><field name="owner" /></span>
                                     </div>
                                     <div class="col-2">
                                         <span class="float-end">
-                                            <field name="state" widget="label_selection" options="{'classes': {'in_store': 'info', 'in_use': 'success', 'in_repair': 'danger', 'loaned': 'warning', 'retired': 'default'}}"/>
+                                            <field
+                                                 name="state"
+                                                 widget="label_selection"
+                                                 options="{
+                                                         'classes': {
+                                                             'in_store': 'info',
+                                                             'in_use': 'success',
+                                                             'in_repair': 'danger',
+                                                             'loaned': 'warning',
+                                                             'retired': 'default'
+                                                         }
+                                                 }"
+                                            />
                                         </span>
                                     </div>
                                 </div>

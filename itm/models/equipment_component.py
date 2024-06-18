@@ -49,7 +49,11 @@ class EquipmentComponent(models.Model):
     )
 
     _sql_constraints = [
-        ('serial_number', 'unique(serial_number)', "Another component already exists with this serial number!"),
+        (
+            "serial_number",
+            "unique(serial_number)",
+            "Another component already exists with this serial number!",
+        ),
     ]
 
     def write(self, vals):
