@@ -399,7 +399,11 @@
                             attrs="{'invisible':[('is_config_file','=', False )]}"
                         >
                             <group>
-                                <field name="configuration_file_ids" nolabel="1" colspan="2">
+                                <field
+                                    name="configuration_file_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                >
                                     <tree editable="bottom">
                                         <field name="name" />
                                         <field name="date" />
@@ -641,10 +645,18 @@
                 <templates>
                     <t t-name="kanban-tooltip">
                         <ul class="oe_kanban_tooltip">
-                            <li><b><t t-esc="record.asset_type_id.value"/>:</b> <t t-esc="record.name.value"/></li>
-                            <li t-if="record.brand_id.raw_value"><b>Brand:</b> <t t-esc="record.brand_id.value"/></li>
-                            <li t-if="record.model.raw_value"><b>Model:</b> <t t-esc="record.model.value"/></li>
-                            <li t-if="record.os_name.raw_value"><b>OS Name:</b> <t t-esc="record.os_name.value"/></li>
+                            <li><b><t t-esc="record.asset_type_id.value"/>:</b> 
+                                 <t t-esc="record.name.value"/>
+                            </li>
+                            <li t-if="record.brand_id.raw_value"><b>Brand:</b>
+                                 <t t-esc="record.brand_id.value"/>
+                            </li>
+                            <li t-if="record.model.raw_value"><b>Model:</b>
+                                 <t t-esc="record.model.value"/>
+                            </li>
+                            <li t-if="record.os_name.raw_value"><b>OS Name:</b>
+                                 <t t-esc="record.os_name.value"/>
+                            </li>
                         </ul>
                     </t>
                     <t t-name="kanban-box">
@@ -659,9 +671,16 @@
                             <div class="oe_kanban_content" tooltip="kanban-tooltip">
                                 <div class="o_kanban_record_top">
                                     <div class="o_kanban_record_headings mt4 ms-1">
-                                        <strong class="o_kanban_record_title"><field name="name" /><span t-if="record.code.raw_value"><small> (<field name="code" />)</small></span></strong>
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name" />
+                                            <span t-if="record.code.raw_value">
+                                                <small> (<field name="code" />)</small>
+                                            </span>
+                                        </strong>
                                     </div>
-                                    <span class="float-end text-end"><t t-esc="record.asset_type_id.value" /></span>
+                                    <span class="float-end text-end">
+                                        <t t-esc="record.asset_type_id.value" />
+                                    </span>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
@@ -686,17 +705,17 @@
                                     <div class="col-2">
                                         <span class="float-end">
                                             <field
-                                                 name="state"
-                                                 widget="label_selection"
-                                                 options="{
-                                                         'classes': {
-                                                             'in_store': 'info',
-                                                             'in_use': 'success',
-                                                             'in_repair': 'danger',
-                                                             'loaned': 'warning',
-                                                             'retired': 'default'
-                                                         }
-                                                 }"
+                                                name="state"
+                                                widget="label_selection"
+                                                options="{
+                                                        'classes': {
+                                                            'in_store': 'info',
+                                                            'in_use': 'success',
+                                                            'in_repair': 'danger',
+                                                            'loaned': 'warning',
+                                                            'retired': 'default'
+                                                        }
+                                                }"
                                             />
                                         </span>
                                     </div>

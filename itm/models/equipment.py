@@ -310,7 +310,9 @@ class ItEquipment(models.Model):
     product_warranty = fields.Char("Warranty")
     product_buydate = fields.Date("Buy Date")
     product_cost = fields.Float("Cost")
-    product_partner_id = fields.Many2one('res.partner', string='Vendor', check_company=True)
+    product_partner_id = fields.Many2one(
+        "res.partner", string="Vendor", check_company=True
+    )
     product_note = fields.Text()
     # Fileserver Page
     equipment_mapping_ids = fields.One2many(
@@ -396,7 +398,9 @@ class ItEquipment(models.Model):
                 }
             )
             if res.site_id:
-                res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
+                res.site_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
             if res.virtual_parent_id:
                 res.virtual_parent_id.message_post(
                     body=msg, subtype_id=mt_note.id, author_id=author

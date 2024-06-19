@@ -21,12 +21,12 @@ class TestEquipment(TransactionCase):
                 "name": "Site X",
             }
         )
-        cls.employee = cls.env['hr.employee'].create(
+        cls.employee = cls.env["hr.employee"].create(
             {
                 "name": "Employee X",
             }
         )
-        cls.department = cls.env['hr.department'].create(
+        cls.department = cls.env["hr.department"].create(
             {
                 "name": "Department X",
             }
@@ -34,7 +34,7 @@ class TestEquipment(TransactionCase):
 
     def test_equipment_assign_to(self):
 
-        equipment = cls.env["itm.equipment"].create(
+        equipment = self.env["itm.equipment"].create(
             {
                 "name": "My Equipment",
                 "partner_id": self.partner.id,
@@ -53,5 +53,5 @@ class TestEquipment(TransactionCase):
         self.assertEqual(
             equipment.department_id,
             self.department,
-            "Equipment should be assigned to both the employee and the department"
+            "Equipment should be assigned to both the employee and the department",
         )
