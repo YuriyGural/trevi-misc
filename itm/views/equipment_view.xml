@@ -646,16 +646,16 @@
                     <t t-name="kanban-tooltip">
                         <ul class="oe_kanban_tooltip">
                             <li><b><t t-esc="record.asset_type_id.value"/>:</b> 
-                                 <t t-esc="record.name.value"/>
+                                 <t t-esc="record.name.value" />
                             </li>
                             <li t-if="record.brand_id.raw_value"><b>Brand:</b>
-                                 <t t-esc="record.brand_id.value"/>
+                                 <t t-esc="record.brand_id.value" />
                             </li>
                             <li t-if="record.model.raw_value"><b>Model:</b>
-                                 <t t-esc="record.model.value"/>
+                                 <t t-esc="record.model.value" />
                             </li>
                             <li t-if="record.os_name.raw_value"><b>OS Name:</b>
-                                 <t t-esc="record.os_name.value"/>
+                                 <t t-esc="record.os_name.value" />
                             </li>
                         </ul>
                     </t>
@@ -694,7 +694,10 @@
                                     </div>
                                     <div class="col-6">
                                         <span class="float-end">
-                                            <field name="ip4_ids" widget="many2many_tags" />
+                                            <field
+                                                name="ip4_ids"
+                                                widget="many2many_tags"
+                                            />
                                         </span>
                                     </div>
                                 </div>

@@ -8,7 +8,8 @@
     "category": "Human Resources",
     "description": """
         Bridge between HR and IT Infrastructure Management.""",
-    "author": "Yuriy Gural",
+    "author": """TREVI Software,
+        Yuriy Gural""",
     "license": "AGPL-3",
     "depends": ["hr", "itm"],
     "summary": "IT Assets, Allocation Tracking",

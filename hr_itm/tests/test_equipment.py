@@ -44,7 +44,7 @@ class TestEquipment(TransactionCase):
 
         equipment.equipment_assign_to = "department"
         equipment.department_id = self.department
-        today = fields.Date.context_today(self)
+        today = fields.Date.today()
         self.assertFalse(equipment.employee_id)
         self.assertEqual(equipment.assign_date, today, "Assign date should be today")
 

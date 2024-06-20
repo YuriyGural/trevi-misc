@@ -71,9 +71,16 @@
                 <field name="department_id" />
             </xpath>
             <xpath expr="//templates//field[@name='owner']/.." position="replace">
-                <div t-if="!record.employee_id.raw_value and !record.department_id.value">Unassigned</div>
-                <div t-if="record.employee_id.value"><field name="employee_id" widget="many2one_avatar_employee"/> <t t-esc="record.employee_id.value" /></div>
-                <div t-if="record.department_id.value"><field name="department_id" /></div>
+                <div t-if="!record.employee_id.raw_value and !record.department_id.value">
+                    Unassigned
+                </div>
+                <div t-if="record.employee_id.value">
+                    <field name="employee_id" widget="many2one_avatar_employee" /> 
+                    <t t-esc="record.employee_id.value" />
+                </div>
+                <div t-if="record.department_id.value">
+                    <field name="department_id" />
+                </div>
             </xpath>
         </field>
     </record>
