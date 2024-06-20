@@ -50,12 +50,8 @@ class ResPartner(models.Model):
     access_ids = fields.One2many(
         "itm.access", "partner_id", "Credentials", groups="itm.group_itm_user"
     )
-    access_count = fields.Integer(
-        compute=_access_count, groups="itm.group_itm_user"
-    )
+    access_count = fields.Integer(compute=_access_count, groups="itm.group_itm_user")
     backup_ids = fields.One2many(
         "itm.backup", "partner_id", "Backups", groups="itm.group_itm_user"
     )
-    backup_count = fields.Integer(
-        compute=_backup_count, groups="itm.group_itm_user"
-    )
+    backup_count = fields.Integer(compute=_backup_count, groups="itm.group_itm_user")

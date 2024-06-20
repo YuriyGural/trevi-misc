@@ -29,6 +29,15 @@ class EquipmentComponent(models.Model):
     _inherit = ["mail.activity.mixin", "mail.thread"]
     _description = "Component"
 
+    def name_get(self):
+        result = []
+        for record in self:
+            if record.name and record.serial_number:
+                result.append((record.id, record.name + '/' + record.serial_number))
+            if record.name and not record.serial_number:
+                result.append((record.id, record.name))
+        return result
+
     name = fields.Char(required=True)
     equipment_id = fields.Many2one(
         "itm.equipment",

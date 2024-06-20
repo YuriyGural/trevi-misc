@@ -225,7 +225,9 @@ class ItAccess(models.Model):
                 % {"dsc": res._description, "id": res.id, "name": res.name}
             )
             if res.site_id:
-                res.site_id.message_post(body=msg, subtype_id=mt_note.id, author_id=author)
+                res.site_id.message_post(
+                    body=msg, subtype_id=mt_note.id, author_id=author
+                )
             if res.equipment_id:
                 res.equipment_id.message_post(
                     body=msg, subtype_id=mt_note.id, author_id=author

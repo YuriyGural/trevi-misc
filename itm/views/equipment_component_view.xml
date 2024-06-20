@@ -288,11 +288,11 @@
                         <group>
                             <group string="Valid Keys">
                                 <field
-                                    name="key_ids"
-                                    nolabel="1"
-                                    colspan="2"
-                                    editable="bottom"
-                                >
+                                name="key_ids"
+                                nolabel="1"
+                                colspan="2"
+                                editable="bottom"
+                            >
                                     <tree>
                                         <field name="name" />
                                     </tree>
@@ -300,11 +300,11 @@
                             </group>
                             <group string="Valid Values">
                                 <field
-                                    name="value_ids"
-                                    nolabel="1"
-                                    colspan="2"
-                                    editable="bottom"
-                                >
+                                name="value_ids"
+                                nolabel="1"
+                                colspan="2"
+                                editable="bottom"
+                            >
                                     <tree>
                                         <field name="name" />
                                     </tree>
@@ -357,11 +357,11 @@
                             </group>
                             <group string="Component Types">
                                 <field
-                                    name="component_type_ids"
-                                    nolabel="1"
-                                    colspan="2"
-                                    editable="bottom"
-                                >
+                                name="component_type_ids"
+                                nolabel="1"
+                                colspan="2"
+                                editable="bottom"
+                            >
                                     <tree>
                                         <field name="name" />
                                     </tree>
@@ -440,11 +440,11 @@
                     <sheet>
                         <field name="active" invisible="1" />
                         <widget
-                            name="web_ribbon"
-                            title="Archived"
-                            bg_color="bg-danger"
-                            attrs="{'invisible': [('active', '=', True)]}"
-                        />
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
                         <group>
                             <group>
                                 <field name="name" />

@@ -45,7 +45,10 @@
         <field name="model">itm.equipment</field>
         <field name="inherit_id" ref="itm.itm_equipment_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='owner']" position="replace">
+            <xpath expr="//field[@name='owner']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='owner']" position="after">
                 <field name="equipment_assign_to" widget="radio" />
                 <field
                     name="employee_id"
@@ -70,8 +73,13 @@
                 <field name="employee_id" />
                 <field name="department_id" />
             </xpath>
-            <xpath expr="//templates//field[@name='owner']/.." position="replace">
-                <div t-if="!record.employee_id.raw_value and !record.department_id.value">
+            <xpath expr="//templates//field[@name='owner']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//templates//field[@name='owner']/.." position="after">
+                <div
+                    t-if="!record.employee_id.raw_value and !record.department_id.value"
+                >
                     Unassigned
                 </div>
                 <div t-if="record.employee_id.value">
@@ -90,7 +98,10 @@
         <field name="model">itm.equipment</field>
         <field name="inherit_id" ref="itm.itm_equipment_tree" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='owner']" position="replace">
+            <xpath expr="//field[@name='owner']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='owner']" position="after">
                 <field name="employee_id" string="Employee" optional="show" />
                 <field name="department_id" string="Department" optional="show" />
             </xpath>
