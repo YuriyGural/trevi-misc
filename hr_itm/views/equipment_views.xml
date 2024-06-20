@@ -75,7 +75,7 @@
                     Unassigned
                 </div>
                 <div t-if="record.employee_id.value">
-                    <field name="employee_id" widget="many2one_avatar_employee" /> 
+                    <field name="employee_id" widget="many2one_avatar_employee" />
                     <t t-esc="record.employee_id.value" />
                 </div>
                 <div t-if="record.department_id.value">

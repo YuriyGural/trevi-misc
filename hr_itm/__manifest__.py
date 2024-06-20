@@ -6,13 +6,11 @@
     "name": "IT Infrastructure Management - HR",
     "version": "16.0.1.0.1",
     "category": "Human Resources",
-    "description": """
-        Bridge between HR and IT Infrastructure Management.""",
+    "summary": "Bridge between HR and IT Infrastructure Management",
     "author": """TREVI Software,
         Yuriy Gural""",
     "license": "AGPL-3",
     "depends": ["hr", "itm"],
-    "summary": "IT Assets, Allocation Tracking",
     "data": [
         "views/equipment_views.xml",
     ],

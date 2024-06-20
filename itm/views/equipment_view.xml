@@ -645,7 +645,7 @@
                 <templates>
                     <t t-name="kanban-tooltip">
                         <ul class="oe_kanban_tooltip">
-                            <li><b><t t-esc="record.asset_type_id.value"/>:</b> 
+                            <li><b><t t-esc="record.asset_type_id.value" />:</b> 
                                  <t t-esc="record.name.value" />
                             </li>
                             <li t-if="record.brand_id.raw_value"><b>Brand:</b>
