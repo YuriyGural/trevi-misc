@@ -33,7 +33,7 @@ class EquipmentComponent(models.Model):
         result = []
         for record in self:
             if record.name and record.serial_number:
-                result.append((record.id, record.name + '/' + record.serial_number))
+                result.append((record.id, record.name + " / " + record.serial_number))
             if record.name and not record.serial_number:
                 result.append((record.id, record.name))
         return result
@@ -47,7 +47,7 @@ class EquipmentComponent(models.Model):
         ondelete="restrict",
     )
     component_type_id = fields.Many2one("itm.equipment.component.type", required=True)
-    serial_number = fields.Char("Serial Number", copy=False)
+    serial_number = fields.Char(copy=False)
     manufacturer_id = fields.Many2one("itm.equipment.brand")
     note = fields.Text()
     active = fields.Boolean(default=True)

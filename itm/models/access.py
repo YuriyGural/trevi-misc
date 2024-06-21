@@ -232,7 +232,7 @@ class ItAccess(models.Model):
                 res.equipment_id.message_post(
                     body=msg, subtype_id=mt_note.id, author_id=author
                 )
-            
+
         return res_ids
 
     # Log a note on deletion of credential to Site and Equipment chatter. Since

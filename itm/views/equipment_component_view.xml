@@ -184,11 +184,11 @@
                             </group>
                             <group string="Valid Keys">
                                 <field
-                                    name="key_ids"
-                                    nolabel="1"
-                                    colspan="2"
-                                    editable="bottom"
-                                >
+                                name="key_ids"
+                                nolabel="1"
+                                colspan="2"
+                                editable="bottom"
+                            >
                                     <tree>
                                         <field name="name" />
                                         <field name="value_type_id" />
